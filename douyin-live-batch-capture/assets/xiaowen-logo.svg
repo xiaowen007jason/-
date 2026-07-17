@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">小文品牌标识</title>
+  <desc id="desc">蓝色渐变圆角方形内融合白色 W、截图取景框和智能星芒</desc>
+  <defs>
+    <linearGradient id="bg" x1="18" y1="14" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1D4ED8"/>
+      <stop offset="0.52" stop-color="#2F6CF2"/>
+      <stop offset="1" stop-color="#65A6FF"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="30" y1="18" x2="96" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bg)"/>
+  <path d="M19 48V31c0-6.6 5.4-12 12-12h17M80 19h17c6.6 0 12 5.4 12 12v17M109 80v17c0 6.6-5.4 12-12 12H80M48 109H31c-6.6 0-12-5.4-12-12V80" fill="none" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+  <path d="M34 47l14 38 16-27 16 27 14-38" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M96 25c0 7.7 4.3 12 12 12-7.7 0-12 4.3-12 12 0-7.7-4.3-12-12-12 7.7 0 12-4.3 12-12z" fill="#DDF2FF"/>
+  <path d="M20 22h88c-17 8-32 21-43 38-10 16-17 35-19 54H20V22z" fill="url(#shine)"/>
+</svg>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抖音直播间批量截图</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="brand-lockup">
+          <img class="brand-logo" src="assets/xiaowen-logo.svg" alt="小文 Logo">
+          <div>
+            <p class="eyebrow">XIAOWEN · DOUYIN LIVE CAPTURE</p>
+            <h1>小文直播间批量截图</h1>
+          </div>
+        </div>
+        <span id="statusBadge" class="badge idle">待开始</span>
+      </header>
+
+      <section class="panel">
+        <label for="brand">品牌名称</label>
+        <div class="row">
+          <input id="brand" type="text" placeholder="例如：谷雨" autocomplete="off">
+          <button id="openSearch" class="secondary">打开直播搜索</button>
+        </div>
+        <p class="hint">请把这个 360 窗口放在竖屏副屏，并切换到抖音搜索的“直播”分类。</p>
+      </section>
+
+      <section class="panel">
+        <div class="section-title">
+          <div>
+            <h2>直播间列表</h2>
+            <p id="roomSummary">尚未扫描</p>
+          </div>
+          <button id="scanRooms" class="primary">自动扫描当前页</button>
+        </div>
+        <div class="list-actions">
+          <button id="selectAll" class="text-button">全选</button>
+          <button id="selectNone" class="text-button">取消全选</button>
+        </div>
+        <div id="roomList" class="room-list empty">扫描后会在这里显示正在直播的账号。</div>
+      </section>
+
+      <section class="panel settings">
+        <h2>截图设置</h2>
+        <div class="settings-grid">
+          <label>加载等待（秒）<input id="waitSeconds" type="number" min="3" max="60" value="7"></label>
+          <label>随机延迟（秒）<input id="jitterSeconds" type="number" min="0" max="20" value="3"></label>
+          <label>失败重试<input id="maxRetries" type="number" min="0" max="3" value="1"></label>
+          <label>输出尺寸
+            <select id="outputMode"><option value="screen">副屏实际像素（推荐）</option><option value="source">直播源原始尺寸</option></select>
+          </label>
+          <label>图片格式
+            <select id="format"><option value="png">高清 PNG（推荐）</option><option value="jpeg">高质量 JPG</option></select>
+          </label>
+        </div>
+        <label>下载目录（位于浏览器默认下载文件夹内）
+          <input id="rootFolder" type="text" value="直播间截图">
+        </label>
+        <label class="check-row"><input id="returnToSearch" type="checkbox" checked>任务结束后返回品牌搜索页</label>
+      </section>
+
+      <section class="panel progress-panel">
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <p id="progressText">准备就绪。截图过程中请不要操作这个浏览器窗口。</p>
+        <div id="resultStats" class="stats"></div>
+      </section>
+
+      <footer>
+        <button id="startJob" class="primary large">开始批量截图</button>
+        <button id="stopJob" class="danger large" disabled>停止</button>
+      </footer>
+      <div class="copyright">
+        <img src="assets/xiaowen-logo.svg" alt="" aria-hidden="true">
+        <span>© 2026 小文 · 本工具仅供授权业务使用</span>
+      </div>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
